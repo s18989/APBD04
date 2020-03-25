@@ -29,7 +29,7 @@ namespace APDB04.Controllers
             {
 
                 com.Connection = con;
-                com.CommandText = "select firstname, lastname, birthdate, name, semester from students inner join enrollment on idenrollment = idenrollment inner join studies on idstudy = idstudy";
+                com.CommandText = "select firstname, lastname, birthdate, name, semester from students s inner join enrollment e on s.idenrollment = e.idenrollment inner join studies st on e.idstudy = st.idstudy";
                 con.Open();
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
